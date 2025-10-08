@@ -1,25 +1,25 @@
 class Dist < Formula
   desc "Shippable application packaging for Rust"
   homepage "https://opensource.axo.dev/cargo-dist/"
-  version "1.0.9"
+  version "1.0.14"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/oxidecomputer/cargo-dist/releases/download/v1.0.9/dist-aarch64-apple-darwin.tar.xz"
-      sha256 "c5284d13baa7248511295e1b0576f5e36f4e9abe31b6c9315b895d979ba81680"
+      url "https://github.com/oxidecomputer/cargo-dist/releases/download/v1.0.14/dist-aarch64-apple-darwin.tar.xz"
+      sha256 "a441891f953f4d323b86e9e29123fce3b5d524e4e1e7c717c5c47b358fcb2d78"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/oxidecomputer/cargo-dist/releases/download/v1.0.9/dist-x86_64-apple-darwin.tar.xz"
-      sha256 "bc502378be9f28f18398d10092bae8d436fb8a64f8ea6c66df54b778069ddbd4"
+      url "https://github.com/oxidecomputer/cargo-dist/releases/download/v1.0.14/dist-x86_64-apple-darwin.tar.xz"
+      sha256 "186656be1df4f194f7c6878b0ced10060ba81bca91e90077e7d935790a73e3d9"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/oxidecomputer/cargo-dist/releases/download/v1.0.9/dist-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "f94e43408a765c4cdfb08d602da44111c7a7777674dd533d66cc7b8a7827f201"
+      url "https://github.com/oxidecomputer/cargo-dist/releases/download/v1.0.14/dist-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "653fe1bcab4c0ac989c014ff847f46a2b0a04a45af477f1e825f3ece94e51bb1"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/oxidecomputer/cargo-dist/releases/download/v1.0.9/dist-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "a43672eade42d0a31def1c6c010b46e7afaa84a3d3881b4130347ee77f7532b2"
+      url "https://github.com/oxidecomputer/cargo-dist/releases/download/v1.0.14/dist-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "09b522bc5caa6763cce5a1ccbd9233db3f5e627e40dcff52577f1aaac67266b4"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
