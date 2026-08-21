@@ -1,20 +1,20 @@
 class OxideCli < Formula
   desc "CLI for the Oxide rack"
   homepage "https://github.com/oxidecomputer/oxide.rs"
-  version "0.17.0+2026060800.0.0"
+  version "0.18.0+2026073100.0.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/oxidecomputer/oxide.rs/releases/download/v0.17.0+2026060800.0.0/oxide-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "a3e1b5c09169dcee818bcd273ad279f150d083c9734f6a9bdf2e1e836302d5e2"
+      url "https://github.com/oxidecomputer/oxide.rs/releases/download/v0.18.0+2026073100.0.0/oxide-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "80baf50267e68da2324b2dab17d9961034de47239cbb341ed154627249b176f2"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/oxidecomputer/oxide.rs/releases/download/v0.17.0+2026060800.0.0/oxide-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "2d9e19cb2c1db88c64586b59828141ffd3792feb7c63f43524fbc008a3cb58b7"
+      url "https://github.com/oxidecomputer/oxide.rs/releases/download/v0.18.0+2026073100.0.0/oxide-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "e862814f789ad6c23ea4dc58a0e38cac3872dd4171e85ff5d2a5121465efcf64"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/oxidecomputer/oxide.rs/releases/download/v0.17.0+2026060800.0.0/oxide-cli-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "223dc32d9b2e985e725c3c345457eec732f31b63cdfbaafc476204ffc9ad4f80"
+    url "https://github.com/oxidecomputer/oxide.rs/releases/download/v0.18.0+2026073100.0.0/oxide-cli-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "2f1fece544792c7f5a30b0479494dc86e7a619bc81274271c3c224dcf37aa477"
   end
   license "MPL-2.0"
 
@@ -43,16 +43,21 @@ class OxideCli < Formula
   end
 
   def install
-    bin.install "oxide" if OS.mac? && Hardware::CPU.arm?
-    bin.install "oxide" if OS.mac? && Hardware::CPU.intel?
-    bin.install "oxide" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "oxide"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "oxide"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "oxide"
+    end
 
     install_binary_aliases!
     generate_completions_from_executable(
       bin/"oxide",
       "completion",
       shell_parameter_format: :arg,
-      shells:                 [:bash, :fish, :zsh],
     )
 
     # Homebrew will automatically install these, so we don't need to do that
