@@ -1,25 +1,26 @@
 class OxideCli < Formula
   desc "CLI for the Oxide rack"
   homepage "https://github.com/oxidecomputer/oxide.rs"
-  version "0.18.0+2026073100.0.0"
+  version "0.19.0+2026091500.0.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/oxidecomputer/oxide.rs/releases/download/v0.18.0+2026073100.0.0/oxide-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "80baf50267e68da2324b2dab17d9961034de47239cbb341ed154627249b176f2"
+      url "https://github.com/oxidecomputer/oxide.rs/releases/download/v0.19.0+2026091500.0.0/oxide-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "17e06e835d26fcb84aba22220902aec31f987a44d8aa522e8248fd2a29a86c68"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/oxidecomputer/oxide.rs/releases/download/v0.18.0+2026073100.0.0/oxide-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "e862814f789ad6c23ea4dc58a0e38cac3872dd4171e85ff5d2a5121465efcf64"
+      url "https://github.com/oxidecomputer/oxide.rs/releases/download/v0.19.0+2026091500.0.0/oxide-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "7627969daf9537ad75aff3c146c6916e15ff14bf22d7ed95afd7ee3dcd209c4e"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/oxidecomputer/oxide.rs/releases/download/v0.18.0+2026073100.0.0/oxide-cli-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "2f1fece544792c7f5a30b0479494dc86e7a619bc81274271c3c224dcf37aa477"
+    url "https://github.com/oxidecomputer/oxide.rs/releases/download/v0.19.0+2026091500.0.0/oxide-cli-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "4adea62ba58a6cd19dbbd5ed56cad8c80c3b2a27edd1d280e0156c19e875c6ff"
   end
   license "MPL-2.0"
 
   BINARY_ALIASES = {
     "aarch64-apple-darwin":              {},
+    "aarch64-pc-windows-gnu":            {},
     "x86_64-apple-darwin":               {},
     "x86_64-pc-windows-gnu":             {},
     "x86_64-unknown-linux-gnu":          {},
